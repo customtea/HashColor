@@ -2,3 +2,4 @@
 *.bmp
 *.png
 test_gen.py
+!Github.jpg
