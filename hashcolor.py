@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw
 from enum import Enum
 import hashlib
 from argparse import ArgumentParser
+import os
 
 OutputMode = 'm'
 OutputSaveFlag = False
@@ -121,6 +122,10 @@ def file_hasher(path):
     h = hashlib.new('sha256')
     Length = hashlib.new('sha256').block_size * 0x80
 
+    if not os.path.exists(path):
+        print("No such file")
+        exit(1)
+    
     with open(path,'rb') as f:
         BinaryData = f.read(Length)
 
