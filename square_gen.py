@@ -62,11 +62,11 @@ def colordot(hexstring):
             x = int(hexstring[i],16)
             color_img[h:h+cell_height,w:w+cell_width]=colorlist[x]
             i+=1
-    cv2.imwrite("square.bmp",color_img)
+    cv2.imwrite(hexstring+".bmp",color_img)
 
 
 if __name__=='__main__':
-    dat = "Twitter"
+    dat = "Github"
     hs = hashlib.sha256(dat.encode()).hexdigest()
     print(hs) 
     colordot(hs)
