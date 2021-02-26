@@ -1,4 +1,4 @@
-# HASHColor
+# HashColor
 
 ひと目でハッシュ値がわかる？
 
@@ -10,6 +10,7 @@ SHA256で生成された16進数64文字を使い、8x8のマスに左上から�
 - 16進数を単純に16色のパレットで変換する。
 - 使用するパレットはHTML4.0で規定されたもの OldColor
 - [Colors](http://clrs.cc/) のサイトで提供されるモダンな16色（オレンジを除く）を利用したModernColor
+- 16段階のグレースケールでの出力 grayscale
 
 ## 使用ライブラリ
 - hashlib ハッシュ生成
@@ -20,8 +21,19 @@ SHA256で生成された16進数64文字を使い、8x8のマスに左上から�
   - Numpy
 - PIL系
   - Pillow
+    - `pip install pillow`
+
+
+## hashcolorのプログラム
+- `$ python hashcolor [Text]`
+- `-f` 入力された\[Text\]をファイルとして解釈して読み込む
+- `-t` 出力形式を選択
+  - m ModernColor
+  - o OldColor
+  - g Grayscale
+- `-s` 指定したファイル名で出力を保存する。画像の表示はしない
 
 
 ## todo
-- コマンドラインオプションの設定
-- 画像フォーマットの選択
+- SilverとWhiteの違いが分かりづらい気がする。 特にModenの方
+- オレオレ仕様コマンドライン引数をなおす？
